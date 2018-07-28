@@ -1,0 +1,14 @@
+{% extends "home/header.html" %}
+
+{% block content %}
+<h1>About Me</h1>
+<h3>Contact Me</h3>
+{{resume.links | safe}}
+<br>
+<br>
+{% for section in resume.sections.all %}
+	<h3>{{section.header}}</h3>
+	{{section.content | safe }}
+	<br>
+{% endfor %}
+{% endblock %}
