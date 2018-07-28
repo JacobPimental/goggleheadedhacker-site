@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta name="google-site-verification" content="P9OZgoaoOQMy_d1conAfuJb9o67gf-PkwV8rz9OAyFo" />
+		<title>{{title}}</title>
+		{%if description%}
+		<meta name="description=" content="{{description}}">
+		{%endif%}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		{% load staticfiles %}
+		<link rel="shortcut icon" type="image/png" href="{%static "/images/logo.ico"%}"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<style type="text/css">
+			html,
+			body{
+				height:100%
+			}
+			a{
+				text-decoration:underline;
+				color:inherit;
+			}
+			a:hover{
+				text-decoration:underline;
+				color:inherit;
+			}
+			hr{
+				border-color:inherit;
+			}
+			img{
+				max-width: 100%
+			}
+			.navbar-brand{
+				padding-top: 0;
+			}
+		</style>
+	</head>
+
+	<body class="body bg-dark text-light"  style="background-color:#ffffffff">
+			<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-secondary mb-4">
+				<a style="text-decoration:none;" class="navbar-brand mt-3 mb-2" href="/" >
+					<img src="{%static "images/logo_plain_svg.svg"%}" height="50" class="d-inline-block pr-2">
+					<font size=4em><p class="d-inline-flex ">Goggle Headed Hacker</p></font>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link text-light" href="/about/">About Me</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light" href="/blog/category/2/1">Malware</a> 
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light" href="/blog/category/1/1">Tutorials</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light" href="/blog/category/3/1">Other</a>
+						</li>
+
+					</ul>
+					<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy Me a Coffee', '#666666', 'S6S89H72');kofiwidget2.draw();</script> 
+					<form class="form-inline" action="/searching/" method="post">{% csrf_token %}
+						<input class="form-control mr-sm-2" maxlength="60" type="search" placeholder="Search" aria-label="search" name="search" >
+						<button class="btn btn-outline-light my-2 my-sm-0" type="submit" value='OK'>Search</button>
+					</form>
+				</div>
+
+			</nav>
+			{% block content %}
+			{% endblock content %}
+			<br>
+			<br>
+			<br>
+			<div id="amzn-assoc-ad-df31442b-539e-4b31-8b48-dc4d76c81dcb"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=df31442b-539e-4b31-8b48-dc4d76c81dcb"></script>
+		</div>
+		<script> $(function(){ $('.nav-tabs a:first').tab('show'); }); </script>
+	</body>
+
+</html>

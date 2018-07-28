@@ -1,0 +1,17 @@
+{% extends "home/header.html" %}
+
+{%block content %}
+
+{% for post in posts %}
+<h1><a href='/blog/post/{{post.id}}'>{{post.title}}</a></h1>
+	<h6>{{post.pub_date}}</h6>
+	{{post.description|safe}}
+	<small>{{post.list_tags|safe}}</small>
+	<br></br>
+{% endfor %}
+
+<br>
+<p class='text-center'>Page {{cur_page}} of {{max_pages}}<br>
+{%if cur_page > 1%}<a href='/blog/{{prev_page}}'><<</a>{%endif%}&emsp;{%if cur_page < max_pages%}<a href='/blog/{{next_page}}'>>></a>{%endif%}</p>
+
+{% endblock %}
