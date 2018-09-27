@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'storages',
     'ckeditor',
     'ckeditor_uploader',
     'resume',
@@ -147,3 +148,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_BUCKET_NAME']
+AWS_S3_REGION_NAME = os.environ['AWS_REGION']
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
